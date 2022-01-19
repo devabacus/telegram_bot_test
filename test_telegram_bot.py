@@ -16,7 +16,7 @@ def messages(dp, bot):
     CHANNEL_ID = -1001663830009 # test shop
     # CHANNEL_ID = -1001309971567 #real shop
     
-    teleg_path = get_imgs_path("E:\Macys")
+    teleg_path = get_imgs_path(BASE_DIR)
     @dp.message_handler(commands=['post'])
     async def send_welcome(message: types.Message):
         
