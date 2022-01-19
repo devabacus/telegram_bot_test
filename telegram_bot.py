@@ -14,8 +14,8 @@ def init_bot():
     executor.start_polling(dp, skip_updates=True)    
 
 def messages(dp, bot):
-    # CHANNEL_ID = -1001663830009 # test shop
-    CHANNEL_ID = -1001309971567 #real shop
+    CHANNEL_ID = -1001663830009 # test shop
+    # CHANNEL_ID = -1001309971567 #real shop
     
     teleg_path = get_imgs_path("E:\Macys")
     @dp.message_handler(commands=['post'])
@@ -28,12 +28,13 @@ def messages(dp, bot):
             with open(img_path, 'rb') as photo:
                 await bot.send_photo(CHANNEL_ID, photo, caption=f"#{brand}\n🌍Для заказа <a href='https://wa.me/79061098570'>👉 Наталья🇺🇲</a>",)
                 # await bot.send_photo(CHANNEL_ID, photo, caption=f"#{brand}\n🌍Для заказа https://wa.me/79061098570 👉 Наталья🇺🇲",)
-            if (idx % 10) == 0:
+            if (idx % 10) == 0 and idx != 0:
                 time.sleep(30)
         
     
 
-
+if __name__ == "__main__":
+    init_bot() 
 
 
 
