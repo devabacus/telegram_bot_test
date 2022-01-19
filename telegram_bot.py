@@ -1,3 +1,4 @@
+from datetime import date
 import logging
 import os
 import time
@@ -6,9 +7,7 @@ import asyncio
 from os_handle import *
 from config import *
 
-base_path = "D:\Macys\\19-01-2022\\telegram\\"
-teleg_path = pathlib.Path(base_path)
-CHANNEL_ID = -1001663830009
+
 def init_bot():
     bot = Bot(token=API_TOKEN, parse_mode=types.ParseMode.HTML)
     dp = Dispatcher(bot)
@@ -16,11 +15,12 @@ def init_bot():
     executor.start_polling(dp, skip_updates=True)    
 
 def messages(dp, bot):
-    
+    CHANNEL_ID = -1001663830009
+    teleg_path = get_imgs_path("D:\Macys")
     @dp.message_handler(commands=['post'])
     async def send_welcome(message: types.Message):
         
-        for img in get_listOfDirs(base_path):
+        for img in get_listOfDirs(teleg_path):
             img_path = get_img_path(teleg_path, img)
             brand = get_brand(teleg_path, img)
             with open(img_path, 'rb') as photo:

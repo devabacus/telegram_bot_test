@@ -1,11 +1,15 @@
+from datetime import date
 import os
 import re
 import pathlib
 
-# p.parents[0].joinpath()
-# print(p.joinpath('ivan.img'))
 
-# lstDirs = os.listdir(base_path)
+def get_imgs_path(base_path):
+    today = date.today().strftime("%d-%m-%Y")
+    teleg_path = pathlib.Path(base_path).joinpath(today).joinpath('telegram')
+    return teleg_path
+
+
 def get_listOfDirs(base_path):
     return os.listdir(base_path)
 
@@ -26,34 +30,8 @@ def get_brand(teleg_path, img_name):
     brand = get_brand_name(txt_path).upper().replace(' ', '')
     return brand
 
-base_path = "D:\Macys\\18-01-2022\\telegram\\"
-teleg_path = pathlib.Path(base_path)
-
-# for img in get_listOfDirs(base_path):
+# for img in get_listOfDirs(teleg_path):
 #     brand = get_brand(teleg_path, img)
-    # print(brand)
-        
-
-# print(get_img_path('1.jpg'))
-# print(get_listOfDirs(base_path))
-
-# for img in lstDirs:
-    
-
-                            
-                            
-#     print(img_path, txt_path)
-
-
-
-# print(lstDirs)
-
-
-
-
-
-
-# imgs = [i for i in lstDirs if r'*.jpg' in i]
-# lst = [i for i in lstDirs if re.search(r'.*.jpg',i)]
+#     print(brand)
 
 
