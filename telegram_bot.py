@@ -6,6 +6,7 @@ from aiogram import Bot, Dispatcher, executor, types
 import asyncio
 from os_handle import *
 from config import *
+
 # CHANNEL_ID = -1001309971567 #real shop
 def init_bot():
     bot = Bot(token=API_TOKEN, parse_mode=types.ParseMode.HTML)
@@ -17,7 +18,7 @@ def messages(dp, bot):
     # CHANNEL_ID = -1001663830009 # test shop
     CHANNEL_ID = -1001309971567 #real shop
     
-    teleg_path = get_imgs_path("E:\Macys")
+    teleg_path = get_imgs_path(BASE_DIR)
     @dp.message_handler(commands=['post'])
     async def send_welcome(message: types.Message):
         
