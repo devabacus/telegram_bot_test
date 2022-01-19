@@ -14,8 +14,8 @@ def init_bot():
     executor.start_polling(dp, skip_updates=True)    
 
 def messages(dp, bot):
-    CHANNEL_ID = -1001663830009 # test shop
-    # CHANNEL_ID = -1001309971567 #real shop
+    # CHANNEL_ID = -1001663830009 # test shop
+    CHANNEL_ID = -1001309971567 #real shop
     
     teleg_path = get_imgs_path("E:\Macys")
     @dp.message_handler(commands=['post'])
