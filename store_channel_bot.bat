@@ -1,0 +1,1 @@
+%cd%\env\Scripts\activate.bat && python %cd%\telegram_bot.py
