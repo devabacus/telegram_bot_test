@@ -7,7 +7,9 @@ import asyncio
 from os_handle import *
 from config import *
 
-
+base_path = "E:\Macys\\19-01-2022\\telegram\\"
+teleg_path = pathlib.Path(base_path)
+CHANNEL_ID = -1001663830009
 def init_bot():
     bot = Bot(token=API_TOKEN, parse_mode=types.ParseMode.HTML)
     dp = Dispatcher(bot)
