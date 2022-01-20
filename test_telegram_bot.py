@@ -25,8 +25,8 @@ def messages(dp, bot):
             img_path = get_img_path(teleg_path, img)
             brand = get_brand(teleg_path, img)
             with open(img_path, 'rb') as photo:
-                await bot.send_photo(CHANNEL_ID, photo, caption=f"#{brand}\n🌍Для заказа <a href='https://wa.me/79061098570'>👉 Наталья🇺🇲</a>",)
-                # await bot.send_photo(CHANNEL_ID, photo, caption=f"#{brand}\n🌍Для заказа https://wa.me/79061098570 👉 Наталья🇺🇲",)
+                await bot.send_photo(CHANNEL_ID, photo, caption=f"#{brand}\n🌍Для заказа <a href='https://wa.me/79061098570'>➡ Наталья🇺🇲</a>",)
+                # await bot.send_photo(CHANNEL_ID, photo, caption=f"#{brand}\n🌍Для заказа https://wa.me/79061098570 ➡ Наталья🇺🇲",)
             if (idx % 10) == 0 and idx != 0:
                 print("sleep for 30s")
                 time.sleep(30)
