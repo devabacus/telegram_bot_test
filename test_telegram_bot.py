@@ -12,7 +12,7 @@ def init_bot():
     messages(dp, bot)
     executor.start_polling(dp, skip_updates=True)    
 
-def messages(dp, bot):
+def messages(dp, bot:Bot):
     CHANNEL_ID = -1001663830009 # test shop
     # CHANNEL_ID = -1001309971567 #real shop
     
